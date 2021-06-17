@@ -1,0 +1,40 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<VBox fx:controller="ru.geekbrains.home.chat.client.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <HBox fx:id="authPanel">
+        <TextField promptText="Введите имя пользователя" fx:id="userNameField" HBox.hgrow="ALWAYS"  onAction="#tryToAuth" >
+            <font>
+                <Font name="Times New Roman" size="18.0"/>
+            </font>
+        </TextField>
+        <Button HBox.hgrow="ALWAYS" maxWidth="-Infinity" onAction="#tryToAuth">
+            <font>
+                <Font name="Times New Roman" size="18.0"/>
+            </font>
+            Connect
+        </Button>
+    </HBox>
+    <TextArea VBox.vgrow="ALWAYS" fx:id="mainTextArea" editable="false">
+        <font>
+            <Font name="Times New Roman" size="22.0"/>
+        </font>
+    </TextArea>
+    <HBox fx:id="msgPanel" visible="false" managed="false" >
+        <TextField HBox.hgrow="ALWAYS" fx:id="mainTextField" onAction="#clickMeBtnAction" promptText="Введите сообщение">
+            <font>
+                <Font name="Times New Roman" size="18.0"/>
+            </font>
+        </TextField>
+        <Button HBox.hgrow="ALWAYS" maxWidth="-Infinity" onAction="#clickMeBtnAction">
+            <font>
+                <Font name="Times New Roman" size="18.0"/>
+            </font>
+            Send
+        </Button>
+    </HBox>
+</VBox>
